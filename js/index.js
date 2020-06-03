@@ -114,11 +114,28 @@ hiddenImg.addEventListener('dblclick', hideImg)
 
 // TASK #2!!!
 
-const big = document.querySelectorAll('img')[3]
-console.log(big)
+const btnColor = document.querySelectorAll('.btn')[0]
+function btnHover (event) {
+    btnColor.style.color = "pink"
+}
+btnColor.addEventListener('mouseover', btnHover)
 
-function hideBig (event) {
-    big.style.display = "none"
+// stopPropagation()
+
+const divColor = document.querySelectorAll('.destination')[0]
+function divHover (event) {
+    divColor.style.color = "red"
+}
+divColor.addEventListener('mouseover', divHover)
+
+
+// TASK #2 PART 2
+
+function stopRefresh (event) {
+    event.preventDefault()
+    console.log("this just happened")
 }
 
-window.addEventListener('dblclick', hideBig) 
+const allLinks = document.querySelectorAll('a')[3]
+
+allLinks.addEventListener('click', stopRefresh)
