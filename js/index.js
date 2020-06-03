@@ -54,11 +54,10 @@ function drop(event) {
 
 // NEW TASK
 
-// function loadImage() {
-//     alert('Image is loaded')
-// }
-
-// document.addEventListener("onload", loadImage())
+function loadImage() {
+    alert('Image is loaded')
+}
+window.addEventListener("load", loadImage)
 
 // NEW TASK
 
@@ -72,6 +71,54 @@ focusNav.addEventListener("focus", focus)
 
 // NEW TASK
 
-const box = document.querySelectorAll('.intro')
+const allBody = document.body
 
-box.addEventListener("onresize", reportSize)
+function reportSize() {
+    var w = window.outerWidth;
+    var h = window.outerHeight;
+    var txt = "Window size: width=" + w + ", height=" + h;
+    document.getElementById("demo").innerHTML = txt;
+  }
+
+allBody.addEventListener("resize", reportSize)
+
+// NEW TASK
+
+window.addEventListener('scroll',(event) => {
+    const x = document.querySelectorAll('a')[2]
+    x.style.display = "none"
+    console.log('Scrolling...');
+});
+
+// NEW TASK
+
+// function logSelection(event) {
+//     const log = document.getElementById("selectedText");
+//     const selection =  event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//     log.textContent = `You selected ${selection}`;
+// }
+
+// const input = document.getElementById('input')
+// input.addEventListener('select', logSelection)
+
+// NEW TASK
+
+const hiddenImg = document.querySelectorAll('img')[1]
+console.log(hiddenImg)
+
+function hideImg (event) {
+    hiddenImg.style.display = "none"
+}
+
+hiddenImg.addEventListener('dblclick', hideImg)
+
+// TASK #2!!!
+
+const big = document.querySelectorAll('img')[3]
+console.log(big)
+
+function hideBig (event) {
+    big.style.display = "none"
+}
+
+window.addEventListener('dblclick', hideBig) 
